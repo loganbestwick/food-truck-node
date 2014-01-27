@@ -1,16 +1,39 @@
-<html>
-<head>
-   <title>Home Page</title>
-</head>
- 
-<body>
+<h2>Food Truck Heaven</h2>
+<h4>Find Food Trucks in SF</h4>
+
+
+
+
+<form accept-charset="UTF-8" action="/search" method="get">
+	<input id="truck_search_address" name="truck[search_address]" placeholder="Address..." size="30" type="text">
+	<br>
+	<div id="radio-buttons">
+		Search Radius:
+		<input checked="checked" id="truck_radius_125" name="truck[radius]" type="radio" value=".125">
+		<label for="radius_eighth_mile_1/8 Mile">1/8 mile</label>
+		<input id="truck_radius_25" name="truck[radius]" type="radio" value=".25">
+		<label for="radius_quarter_mile_1/4 Mile">1/4 mile</label>
+		<input id="truck_radius_5" name="truck[radius]" type="radio" value=".5">
+		<label for="radius_half_mile_1/2 Mile">1/2 mile</label>
+		<input id="truck_radius_1" name="truck[radius]" type="radio" value="1">
+		<label for="radius_one_mile_1 Mile">1 mile</label>
+	</div>
+	<br>
+	<input id="search_button" name="commit" type="submit" value="Find Me Trucks!">
+</form>
+
+<div id="map-canvas"></div>
+
+
+
+
+
+<!-- style="margin:0;padding:0;display:inline"
 <h1>Blog!</h1>
- 
-<footer>
+
+{{#each entries}}
 <p>
-   <a href="/">Home</a> ~ <a href="/about">About Me</a> ~ <a href="/article">Some Article</a>
+<a href="/article/{{id}}">{{title}}</a><br/>
+Published: {{published}}
 </p>
-</footer>
- 
-</body>
-</html>
+{{/each}} -->
