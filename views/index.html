@@ -1,16 +1,8 @@
-<html>
-<head>
-   <title>Home Page</title>
-</head>
- 
-<body>
 <h1>Blog!</h1>
- 
-<footer>
+
+{{#each entries}}
 <p>
-   <a href="/">Home</a> ~ <a href="/about">About Me</a> ~ <a href="/article">Some Article</a>
+<a href="/article/{{id}}">{{title}}</a><br/>
+Published: {{published}}
 </p>
-</footer>
- 
-</body>
-</html>
+{{/each}}
