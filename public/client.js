@@ -18,7 +18,7 @@ $(document).ready( function(){
 			var address = $('#truck_search_address').val();
 			var radius = $("input:radio:checked").val();
 			$.ajax({
-				url: "/trucks/new",
+				url: "/search",
 				type: "get",
 				data: {"search_address" : address, "radius" : radius},
 				dataType: 'json'

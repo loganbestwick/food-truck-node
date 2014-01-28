@@ -1,4 +1,5 @@
 var express = require('express');
+var geoMethods = require('geo-methods');
 var hbs = require('hbs');
 var app = express();
  
@@ -12,6 +13,8 @@ app.get('/', function(request, response){
 });
 
 app.get('/search', function(request, response){
+	var search_location = geoMethods.get_longitude_latitude(request.query.search_address);
+	var url = "https://data.sfgov.org/resource/rqzj-sfat.json"
 });
 
 app.listen(3000);
