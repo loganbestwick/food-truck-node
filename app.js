@@ -3,7 +3,6 @@ var geoMethods = require('geo-methods');
 var geocoder = require('geocoder');
 var hbs = require('hbs');
 var https = require('https');
-var request = require('request');
 var async = require("async");
 var app = express();
  
