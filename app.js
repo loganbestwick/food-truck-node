@@ -46,6 +46,7 @@ app.get('/search', function(request, response){
 				findTrucks(truckData, searchLocation, parseFloat(request.query.radius));
 				console.log(trucksInRange.length);
 				console.log(trucksInRange);
+				response.send(trucksInRange);
 				callback();
 			}
 		]

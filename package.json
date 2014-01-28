@@ -1,9 +1,12 @@
 {
-   "name": "demo1",
-   "description": "First Express app",
-   "version": "0.0.1",
-   "dependencies": {
-      "express": "3.x",
-      "hbs" : "*"
-   }
+  "name": "foodtruckSF",
+  "description": "Food Truck SF in Node",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "3.x",
+    "hbs": "*",
+    "geocoder": "0.1.0",
+    "async": "0.2.1",
+    "logfmt": "~0.20.0"
+  }
 }
