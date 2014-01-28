@@ -27,7 +27,6 @@ $(document).ready( function(){
 					alert("There were no food trucks found around that address. Please search at a new address or increase the search radius.");
 					return;
 				}
-				console.log(data);
 				addMarker(data);
 				var newCenter = new google.maps.LatLng(parseFloat(data[0]["latitude"]), parseFloat(data[0]["longitude"]));
 				map.panTo(newCenter);

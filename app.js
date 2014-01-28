@@ -18,7 +18,6 @@ app.get('/', function(request, response){
 
 app.get('/search', function(request, response){
 	var truckData = '';
-	var trucksInRange = [];
 	var searchLocation;
 	async.series([
 			function(callback) {
@@ -30,7 +29,6 @@ app.get('/search', function(request, response){
 				});
 			},
 			function(callback) {
-				console.log(searchLocation);
 				var options = {host: 'data.sfgov.org', path: '/resource/rqzj-sfat.json', method: 'GET'};
 				https.get(options, function(response){
 					response.on('data', function(chunk){
@@ -43,28 +41,12 @@ app.get('/search', function(request, response){
 				})
 			},
 			function(callback){
-				findTrucks(truckData, searchLocation, parseFloat(request.query.radius));
-				console.log(trucksInRange.length);
-				console.log(trucksInRange);
+				var trucksInRange = geoMethods.compareDistances(truckData, searchLocation, parseFloat(request.query.radius));
 				response.send(trucksInRange);
 				callback();
 			}
 		]
 	);
-
-	var findTrucks = function(trucksArray, searchLocation, range){
-		for (var i = 0; i < trucksArray.length; i++) {
-			if (trucksArray[i].latitude != null){
-				var distance = geoMethods.coorDist(searchLocation.latitude, searchLocation.longitude, 
-					parseFloat(trucksArray[i].latitude), parseFloat(trucksArray[i].longitude));
-				if (distance <= range) {
-					console.log("test 3");
-					trucksInRange.push(trucksArray[i]);
-				}
-			}
-		};
-	}
-
 });
 
 app.listen(process.env.PORT || 5000)
