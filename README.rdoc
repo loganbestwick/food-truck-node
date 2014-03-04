@@ -6,13 +6,11 @@ After finishing the first iteration of this app in Rails, I was left with a desi
 Thoughts
 --------
 - Node's npm system is incredibly easy to use akin to Ruby gems. There are tons of libraries out there for use. The Node community really provides a ton of support.
-- It was simple to boot up a Node app and get "Hello, world" running. Complications arose once controllers started to get a bit more complicated as I learned that Node runs asynchronously. I can see why it would be incredibly power to some. For an app this small, and this being my first time working in Node, it was a difficult learning experience. 
+- It was simple to boot up a Node app and get "Hello, world" running. Complications arose once controllers started to fill out as I learned that Node runs asynchronously. I can see why it would be incredibly power to some. For an app this small, and this being my first time working in Node, it was a difficult learning experience. 
 - I am so thankful for the async library
 
 Memorable Moments
 -----------------
 - Learning that Node works asynchronously took a lot of energy. Hours were spent into discovering this attribute and then learning how to get around it. An incredible library called async is ultimately what led to running my dependant methods in a blocking fashion. A lot of time was spent digging into this problem and I've learned so much because of it. I understand why it can be so powerful to run asynchronously. File uploading, content sharing, updating, and a ton of other actions are all made easier and faster. It took me a while to grasp it, but I learned much from doing so.
-
-Thanks for reading!
 
 Logan Bestwick
